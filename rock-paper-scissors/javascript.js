@@ -35,44 +35,66 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         return 0;
     }
-    else {
-        if (humanChoice === "rock") {
-            if (computerChoice === "paper") {
-                return -1;
-            }
-            else {
-                return 1;
-            }
-        }
-        else if (humanChoice === "paper") {
-            if (computerChoice === "rock") {
-                return 1;
-            }
-            else {
-                return -1;
-            }
+
+    if (humanChoice === "rock") {
+        if (computerChoice === "paper") {
+            return -1;
         }
         else {
-            if (computerChoice === "rock") {
-                return -1;
-            }
-            else {
-                return 1;
-            }
+            return 1;
+        }
+    }
+    else if (humanChoice === "paper") {
+        if (computerChoice === "rock") {
+            return 1;
+        }
+        else {
+            return -1;
+        }
+    }
+    else {
+        if (computerChoice === "rock") {
+            return -1;
+        }
+        else {
+            return 1;
+        }
+    }
+}
+
+/*(4) playGame this will play five round 
+of rock paper scissors */
+
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
+    for (let i = 1; i <= 5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        const oneRoundResult = playRound(humanChoice, computerChoice);
+        console.log("Round " + i + " : ");
+        console.log("computerSelection : " + computerSelection);
+        console.log("humanSelection : " + humanSelection);
+        console.log("----------------------");
 
 
+        if (oneRoundResult == 0) {
+            humanScore++;
+            computerScore++;
+        }
+        else if (oneRoundResult == 1) {
+            humanScore++;
+        }
+        else {
+            computerScore++;
         }
     }
 }
 
 
-let humanScore = 0;
-let computerScore = 0;
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-console.log("computerSelection : " + computerSelection);
-console.log("humanSelection : " + humanSelection);
-console.log("The Result : " + playRound(humanSelection, computerSelection));
+
+
+
 
 
