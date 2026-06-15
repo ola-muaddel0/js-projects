@@ -26,5 +26,53 @@ function getHumanChoice() {
     let userInput = prompt("enter you choice : ROCK | Paper | Scissors");
     return userInput.toLowerCase();
 }
+/* (3) play round 
+it will return value between (-1 , 0 , 1)
+if the computer win : -1
+if the user win : 1 ;
+if it is draw : 0 */
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        return 0;
+    }
+    else {
+        if (humanChoice === "rock") {
+            if (computerChoice === "paper") {
+                return -1;
+            }
+            else {
+                return 1;
+            }
+        }
+        else if (humanChoice === "paper") {
+            if (computerChoice === "rock") {
+                return 1;
+            }
+            else {
+                return -1;
+            }
+        }
+        else {
+            if (computerChoice === "rock") {
+                return -1;
+            }
+            else {
+                return 1;
+            }
+
+
+        }
+    }
+}
+
+
+let humanScore = 0;
+let computerScore = 0;
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+console.log("computerSelection : " + computerSelection);
+console.log("humanSelection : " + humanSelection);
+console.log("The Result : " + playRound(humanSelection, computerSelection));
 
 
