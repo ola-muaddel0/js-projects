@@ -71,7 +71,7 @@ function playGame() {
     for (let i = 1; i <= 5; i++) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
-        const oneRoundResult = playRound(humanChoice, computerChoice);
+        const oneRoundResult = playRound(humanSelection, computerSelection);
         console.log("Round " + i + " : ");
         console.log("computerSelection : " + computerSelection);
         console.log("humanSelection : " + humanSelection);
