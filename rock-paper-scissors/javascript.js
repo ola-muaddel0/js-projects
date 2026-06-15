@@ -61,6 +61,20 @@ function playRound(humanChoice, computerChoice) {
         }
     }
 }
+/*(5) This function will output the final result */
+function showFinalresult(computerScore, humanScore) {
+    console.log("computerScore : " + computerScore);
+    console.log("humanScore : " + humanScore);
+    if (computerScore === humanScore) {
+        console.log("Draw");
+    }
+    else if (computerScore >  humanScore) {
+        console.log("You lose");
+    }
+    else {
+        console.log("You Win");
+    }
+}
 
 /*(4) playGame this will play five round 
 of rock paper scissors */
@@ -88,8 +102,11 @@ function playGame() {
         else {
             computerScore++;
         }
+       
     }
+     showFinalresult(computerScore, humanScore);
 }
+playGame();
 
 
 
