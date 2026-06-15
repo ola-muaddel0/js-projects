@@ -29,7 +29,7 @@ function showScore(humanScore, computerScore) {
 }
 function showWinner(humanScore, computerScore) {
     console.log("Final Result : ");
-    console.log("----------------");
+    console.log("---------------");
     if (humanScore === computerScore) {
         console.log("Draw");
     }
