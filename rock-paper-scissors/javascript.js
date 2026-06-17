@@ -91,12 +91,7 @@ function playGame() {
         console.log("humanSelection : " + humanSelection);
         console.log("----------------------");
 
-
-        if (oneRoundResult == 0) {
-            humanScore++;
-            computerScore++;
-        }
-        else if (oneRoundResult == 1) {
+        if  (oneRoundResult == 1) {
             humanScore++;
         }
         else {
