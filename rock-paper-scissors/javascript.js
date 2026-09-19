@@ -3,6 +3,10 @@
 /* (1) we can use console.log(probability) to check the 
  probability and see if the result of console.log(getComputerChoice())
  match the choice we put based on that probability */
+
+const rockButton = document.createElement("button");
+const paperButton = document.createElement("button");
+const scissorsButton = document.createElement("button");
 function getComputerChoice() {
     let probability = Math.random();
     let choice;
@@ -68,7 +72,7 @@ function showFinalresult(computerScore, humanScore) {
     if (computerScore === humanScore) {
         console.log("Draw");
     }
-    else if (computerScore >  humanScore) {
+    else if (computerScore > humanScore) {
         console.log("You lose");
     }
     else {
@@ -91,17 +95,17 @@ function playGame() {
         console.log("humanSelection : " + humanSelection);
         console.log("----------------------");
 
-        if  (oneRoundResult === 1) {
+        if (oneRoundResult === 1) {
             humanScore++;
         }
-        if (oneRoundResult === -1){
+        if (oneRoundResult === -1) {
             computerScore++;
         }
-       
+
     }
-     showFinalresult(computerScore, humanScore);
+    showFinalresult(computerScore, humanScore);
 }
-playGame();
+/* playGame() */;
 
 
 
