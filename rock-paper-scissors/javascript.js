@@ -1,12 +1,24 @@
 /* date : 2026-06-15 */
 
+
+const rockButton = document.createElement("button");
+rockButton.addEventListener("click", () => {
+    playRound(getComputerChoice, "rock");
+});
+
+const paperButton = document.createElement("button");
+paperButton.addEventListener("click", () => {
+    playRound(getComputerChoice, "paper");
+});
+
+const scissorsButton = document.createElement("button");
+scissorsButton.addEventListener("click", () => {
+    playRound(getComputerChoice, "scissors");
+});
+
 /* (1) we can use console.log(probability) to check the 
  probability and see if the result of console.log(getComputerChoice())
  match the choice we put based on that probability */
-
-const rockButton = document.createElement("button");
-const paperButton = document.createElement("button");
-const scissorsButton = document.createElement("button");
 function getComputerChoice() {
     let probability = Math.random();
     let choice;
@@ -23,14 +35,8 @@ function getComputerChoice() {
 
 }
 
-/*(2) this function will get user input using prompt 
-and return the user input in lower case I can check it
-with console.log(getComputerChoice()) */
-function getHumanChoice() {
-    let userInput = prompt("enter you choice : ROCK | Paper | Scissors");
-    return userInput.toLowerCase();
-}
-/* (3) play round 
+
+/* (2) play round 
 it will return value between (-1 , 0 , 1)
 if the computer win : -1
 if the user win : 1 ;
@@ -65,7 +71,7 @@ function playRound(humanChoice, computerChoice) {
         }
     }
 }
-/*(5) This function will output the final result */
+/*(3) This function will output the final result */
 function showFinalresult(computerScore, humanScore) {
     console.log("computerScore : " + computerScore);
     console.log("humanScore : " + humanScore);
