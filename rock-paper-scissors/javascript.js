@@ -95,3 +95,10 @@ function playRound(humanChoice, computerChoice) {
         }
     }
 }
+/*(3)  */
+function checkGameEnding(){
+    if(roundTimes == MAX_PLAYING_TIMES){
+        return true ;
+    }
+    return false ;
+}
