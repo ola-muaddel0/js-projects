@@ -1,20 +1,31 @@
 /* date : 2026-06-15 */
 
+const gameContainer = document.querySelector(".game");
+console.log(gameContainer);
 
 const rockButton = document.createElement("button");
+rockButton.textContent = "Rock";
 rockButton.addEventListener("click", () => {
     playRound(getComputerChoice, "rock");
 });
 
 const paperButton = document.createElement("button");
+paperButton.textContent = "Paper";
 paperButton.addEventListener("click", () => {
     playRound(getComputerChoice, "paper");
 });
 
 const scissorsButton = document.createElement("button");
+scissorsButton.textContent = "Scissors";
 scissorsButton.addEventListener("click", () => {
     playRound(getComputerChoice, "scissors");
 });
+
+gameContainer.appendChild(rockButton);
+gameContainer.appendChild(paperButton);
+gameContainer.appendChild(scissorsButton);
+
+
 
 /* (1) we can use console.log(probability) to check the 
  probability and see if the result of console.log(getComputerChoice())
