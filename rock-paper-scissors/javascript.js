@@ -1,24 +1,26 @@
 /* date : 2026-06-15 */
 
 const gameContainer = document.querySelector(".game");
-console.log(gameContainer);
+
+let computerScore = 0;
+let humanScore = 0 ;
 
 const rockButton = document.createElement("button");
 rockButton.textContent = "Rock";
 rockButton.addEventListener("click", () => {
-    playRound(getComputerChoice, "rock");
+    playRound("rock",getComputerChoice() );
 });
 
 const paperButton = document.createElement("button");
 paperButton.textContent = "Paper";
 paperButton.addEventListener("click", () => {
-    playRound(getComputerChoice, "paper");
+    playRound("paper", getComputerChoice());
 });
 
 const scissorsButton = document.createElement("button");
 scissorsButton.textContent = "Scissors";
 scissorsButton.addEventListener("click", () => {
-    playRound(getComputerChoice, "scissors");
+    playRound("scissors", getComputerChoice());
 });
 
 gameContainer.appendChild(rockButton);
@@ -59,75 +61,32 @@ function playRound(humanChoice, computerChoice) {
 
     if (humanChoice === "rock") {
         if (computerChoice === "paper") {
+            computerScore++;
             return -1;
         }
         else {
+            humanScore++;
             return 1;
         }
     }
     else if (humanChoice === "paper") {
         if (computerChoice === "rock") {
+            humanScore++;
             return 1;
         }
         else {
+            computerScore++
             return -1;
         }
     }
     else {
         if (computerChoice === "rock") {
+            computerScore++;
             return -1;
         }
         else {
+            humanScore++;
             return 1;
         }
     }
 }
-/*(3) This function will output the final result */
-function showFinalresult(computerScore, humanScore) {
-    console.log("computerScore : " + computerScore);
-    console.log("humanScore : " + humanScore);
-    if (computerScore === humanScore) {
-        console.log("Draw");
-    }
-    else if (computerScore > humanScore) {
-        console.log("You lose");
-    }
-    else {
-        console.log("You Win");
-    }
-}
-
-/*(4) playGame this will play five round 
-of rock paper scissors */
-
-function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
-    for (let i = 1; i <= 5; i++) {
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        const oneRoundResult = playRound(humanSelection, computerSelection);
-        console.log("Round " + i + " : ");
-        console.log("computerSelection : " + computerSelection);
-        console.log("humanSelection : " + humanSelection);
-        console.log("----------------------");
-
-        if (oneRoundResult === 1) {
-            humanScore++;
-        }
-        if (oneRoundResult === -1) {
-            computerScore++;
-        }
-
-    }
-    showFinalresult(computerScore, humanScore);
-}
-/* playGame() */;
-
-
-
-
-
-
-
-
