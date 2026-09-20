@@ -12,6 +12,7 @@ rockButton.textContent = "Rock";
 rockButton.addEventListener("click", () => {
     playRound("rock", getComputerChoice());
     roundTimes++;
+    checkGameEnding();
 });
 
 const paperButton = document.createElement("button");
@@ -19,6 +20,7 @@ paperButton.textContent = "Paper";
 paperButton.addEventListener("click", () => {
     playRound("paper", getComputerChoice());
     roundTimes++;
+    checkGameEnding();
 });
 
 const scissorsButton = document.createElement("button");
@@ -26,6 +28,7 @@ scissorsButton.textContent = "Scissors";
 scissorsButton.addEventListener("click", () => {
     playRound("scissors", getComputerChoice());
     roundTimes++;
+    checkGameEnding();
 });
 
 gameContainer.appendChild(rockButton);
@@ -98,21 +101,32 @@ function playRound(humanChoice, computerChoice) {
 /*(3)  */
 function checkGameEnding() {
     if (roundTimes == MAX_PLAYING_TIMES) {
+        showFinalresult();
         return true;
     }
     return false;
 }
 /*(5) This function will output the final result */
-function showFinalresult(computerScore, humanScore) {
-    console.log("computerScore : " + computerScore);
-    console.log("humanScore : " + humanScore);
+function showFinalresult() {
+    const humanScoreText = document.createElement("p");
+    const computerScoreText = document.createElement("p");
+    const finalResult = document.createElement("p");
+    let result = "";
     if (computerScore === humanScore) {
-
+        result = "Draw";
     }
     else if (computerScore > humanScore) {
-
+        result = "You lose";
     }
     else {
-
+        result = "You Win";
     }
+    humanScoreText.textContent = "Human Score : " + humanScore;
+    computerScoreText.textContent = "Computer Score : " + computerScore;
+    finalResult.textContent = result;
+    
+    resultContainer.appendChild(humanScoreText);
+    resultContainer.appendChild(computerScoreText);
+    resultContainer.appendChild(finalResult);
+
 }
