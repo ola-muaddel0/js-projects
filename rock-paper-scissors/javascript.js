@@ -96,9 +96,23 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 /*(3)  */
-function checkGameEnding(){
-    if(roundTimes == MAX_PLAYING_TIMES){
-        return true ;
+function checkGameEnding() {
+    if (roundTimes == MAX_PLAYING_TIMES) {
+        return true;
     }
-    return false ;
+    return false;
+}
+/*(5) This function will output the final result */
+function showFinalresult(computerScore, humanScore) {
+    console.log("computerScore : " + computerScore);
+    console.log("humanScore : " + humanScore);
+    if (computerScore === humanScore) {
+
+    }
+    else if (computerScore > humanScore) {
+
+    }
+    else {
+
+    }
 }
