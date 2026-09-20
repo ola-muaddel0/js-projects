@@ -1,14 +1,16 @@
 /* date : 2026-06-15 */
 
 const gameContainer = document.querySelector(".game");
+const resultContainer = document.querySelector(".game-result");
 
+let roundTimes = 0;
 let computerScore = 0;
-let humanScore = 0 ;
+let humanScore = 0;
 
 const rockButton = document.createElement("button");
 rockButton.textContent = "Rock";
 rockButton.addEventListener("click", () => {
-    playRound("rock",getComputerChoice() );
+    playRound("rock", getComputerChoice());
 });
 
 const paperButton = document.createElement("button");
