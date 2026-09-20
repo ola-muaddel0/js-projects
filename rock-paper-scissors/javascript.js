@@ -6,23 +6,26 @@ const resultContainer = document.querySelector(".game-result");
 let roundTimes = 0;
 let computerScore = 0;
 let humanScore = 0;
-
+const MAX_PLAYING_TIMES = 5;
 const rockButton = document.createElement("button");
 rockButton.textContent = "Rock";
 rockButton.addEventListener("click", () => {
     playRound("rock", getComputerChoice());
+    roundTimes++;
 });
 
 const paperButton = document.createElement("button");
 paperButton.textContent = "Paper";
 paperButton.addEventListener("click", () => {
     playRound("paper", getComputerChoice());
+    roundTimes++;
 });
 
 const scissorsButton = document.createElement("button");
 scissorsButton.textContent = "Scissors";
 scissorsButton.addEventListener("click", () => {
     playRound("scissors", getComputerChoice());
+    roundTimes++;
 });
 
 gameContainer.appendChild(rockButton);
