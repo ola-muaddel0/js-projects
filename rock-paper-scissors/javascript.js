@@ -63,6 +63,7 @@ if the computer win : -1
 if the user win : 1 ;
 if it is draw : 0 */
 function playRound(humanChoice, computerChoice) {
+    showSelection(humanChoice, computerChoice);
     if (humanChoice === computerChoice) {
         return 0;
     }
@@ -98,7 +99,19 @@ function playRound(humanChoice, computerChoice) {
         }
     }
 }
-/*(3)  */
+/*(3) */
+function showSelection(humanChoice, computerChoice) {
+    const humanChoiceText = document.createElement("p");
+    const computerChoiceText = document.createElement("p");
+
+    humanChoiceText.textContent = "Human Choice : " + humanChoice;
+    computerChoiceText.textContent = "Computer Choice : " + computerChoice;
+
+    gameContainer.appendChild(humanChoiceText);
+    gameContainer.appendChild(computerChoiceText);
+
+}
+/*(4)  */
 function checkGameEnding() {
     if (roundTimes == MAX_PLAYING_TIMES) {
         showFinalresult();
@@ -124,7 +137,7 @@ function showFinalresult() {
     humanScoreText.textContent = "Human Score : " + humanScore;
     computerScoreText.textContent = "Computer Score : " + computerScore;
     finalResult.textContent = result;
-    
+
     resultContainer.appendChild(humanScoreText);
     resultContainer.appendChild(computerScoreText);
     resultContainer.appendChild(finalResult);
